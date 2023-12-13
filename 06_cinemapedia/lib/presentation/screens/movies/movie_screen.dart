@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:cinemapedia/domain/entities/movie.dart';
 import 'package:cinemapedia/presentation/providers/actors/actors_by_movie_provider.dart';
 import 'package:cinemapedia/presentation/providers/movies/movie_info_provider.dart';
@@ -119,7 +120,14 @@ class _CustomSliverAppBar extends StatelessWidget {
       flexibleSpace: FlexibleSpaceBar(
         background: Stack(children: [
           SizedBox.expand(
-              child: Image.network(movie.posterPath, fit: BoxFit.cover)),
+              child: Image.network(
+            movie.posterPath,
+            fit: BoxFit.cover,
+            loadingBuilder: (context, child, loadingProgress) {
+              if (loadingProgress != null) return const SizedBox();
+              return FadeIn(child: child);
+            },
+          )),
           const SizedBox.expand(
             child: DecoratedBox(
                 decoration: BoxDecoration(
@@ -185,7 +193,7 @@ class _ActorsByMovie extends ConsumerWidget {
                     Text(
                       actor.character ?? '',
                       maxLines: 2,
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           overflow: TextOverflow.ellipsis),
                     )
