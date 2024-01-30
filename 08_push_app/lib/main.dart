@@ -4,7 +4,9 @@ import 'package:push_app/config/router/app_router.dart';
 import 'package:push_app/config/theme/app_theme.dart';
 import 'package:push_app/presentation/blocs/notifications/notifications_bloc.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await NotificationsBloc.initializeFirabaseNotifications();
   runApp(MultiBlocProvider(
       providers: [BlocProvider(create: (_) => NotificationsBloc())],
       child: const MainApp()));

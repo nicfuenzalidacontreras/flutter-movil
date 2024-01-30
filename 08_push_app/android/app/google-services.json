@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "81767317627",
+    "project_id": "flutter-projects-1e3ff",
+    "storage_bucket": "flutter-projects-1e3ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81767317627:android:582903d555e299ffa062de",
+        "android_client_info": {
+          "package_name": "com.nicfuenzalida.push_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBH5EhGJf0HqHaNZ-s6nNFQ9bJZaxxf6cI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
