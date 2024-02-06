@@ -8,7 +8,7 @@ import 'package:push_app/presentation/blocs/notifications/notifications_bloc.dar
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
-  await NotificationsBloc.initializeFirabaseNotifications();
+  await NotificationsBloc.initializeFCM();
   runApp(MultiBlocProvider(
       providers: [BlocProvider(create: (_) => NotificationsBloc())],
       child: const MainApp()));
